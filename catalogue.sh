@@ -53,7 +53,7 @@ mkdir /app  &>> $LOGFILE
 echo -e "$G directory already available $N"
 fi
 
-curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
+curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
 
 VALIDATE $? "downloading catalogue artifact"
 
