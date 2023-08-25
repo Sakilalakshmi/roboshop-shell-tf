@@ -79,9 +79,10 @@ VALIDATE $? "daemon reload"
 
 systemctl enable cart &>> $LOGFILE
 
-VALIDATE $? "Enabling user"
+VALIDATE $? "Enabling cart"
 
 systemctl start cart &>> $LOGFILE
 
-VALIDATE $? "Starting user"
+VALIDATE $? "Starting cart"
+
 
