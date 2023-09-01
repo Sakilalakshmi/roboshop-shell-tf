@@ -33,7 +33,8 @@ instance_ids=$(aws ec2 describe-instances --filters name=tag : name.value= "'$i'
  echo "Respective private for the $i instance is $j"
 
 
-aws route53 change-resource-record-sets --hosted-zone-id  $HOSTED_ZONE_ID --change-batch '
+aws route53 change-resource-record-sets --hosted-zone-id  $HOSTED_ZONE_ID --change-batch 
+'
 {
             "Changes": [{
             "Action": "UPSERT",
