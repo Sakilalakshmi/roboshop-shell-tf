@@ -19,15 +19,15 @@ fi
  
 
 instance_ids=$(aws ec2 describe-instances --filters name=tag : name.value= "'$i'" | jq -r '.Reservations[].Instances[].InstanceId)
-for instance_id in $instance_ids
-do 
+   for instance_id in $instance_ids
+   do 
     running=$(aws ec2 describe-instances --instance_ids $instance_id | jq -r '.Reservations[].Instances[].state.name')
      if [ "$running" == "running" ]
      then 
        echo "The EC2 instance $instance_id is already running,not launching a new instance"
        exit 1
      fi
-done
+   done
  echo "Creating $i instance"
   j=$(aws ec2 run-instances --image-id $IMAGE_ID --instance-type $INSTANCE_TYPE --security-group-ids $SECURITY_GROUP_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" |  jq -r '.Instances[0].PrivateIpAddress')
  echo "Respective private for the $i instance is $j"
