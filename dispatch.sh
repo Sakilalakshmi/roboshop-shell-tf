@@ -60,7 +60,7 @@ go build &>> $LOGFILE
 
 VALIDATE $? "Build Package"
 
-cp /home/centos/roboshop-shell-tf/dispatch.service /etc/systemd/system/dispatch.service &>> $LOGFILE
+cp /home/centos/roboshop-shell/dispatch.service /etc/systemd/system/dispatch.service &>> $LOGFILE
 
 VALIDATE $? "Copying dispatch service"
 
