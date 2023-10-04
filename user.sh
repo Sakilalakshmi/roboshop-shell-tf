@@ -85,7 +85,7 @@ systemctl start user &>> $LOGFILE
 
 VALIDATE $? "Starting user"
 
-cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp /home/centos/roboshop-shell-tf/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
 VALIDATE $? "Copying mongo repo"
 
@@ -96,7 +96,3 @@ VALIDATE $? "Installing mongo client"
 mongo --host mongodb.learningdevops.shop </app/schema/user.js &>> $LOGFILE
 
 VALIDATE $? "loading user data into mongodb"
-
-
-
-

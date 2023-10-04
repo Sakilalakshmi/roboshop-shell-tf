@@ -54,11 +54,10 @@ unzip /tmp/frontend.zip &>> $LOGFILE
 
 VALIDATE $? "Unzipping web"
 
-cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf &>> $LOGFILE
+cp /home/centos/roboshop-shell-tf/roboshop.conf /etc/nginx/default.d/roboshop.conf &>> $LOGFILE
 
 VALIDATE $? "Copying conf"
 
 systemctl restart nginx &>> $LOGFILE
 
 VALIDATE $? "Restarting nginx"
-
